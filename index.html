@@ -8,9 +8,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Yelp Roulette</title>
 	<!-- Bootstrap -->
+	<style></style>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+	<script type="text/javascript" src="assets/javascript/popper.min.js"></script>
 </head>
 
 <body>
@@ -32,15 +33,53 @@
 					<div class="form-group">
 						<input type="text" class="form-control p-2" id="keyword-input" placeholder="Enter keyword">
 					</div>
-					<div class="form-group">
-						<input type="text" class="form-control p-2" id="price-input" placeholder="Enter max price">
-					</div>
-					<div class="form-group">
+
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenuButton" id = "price-input" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Price
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						  <a class="dropdown-item" id= "price-input" value="1">$</a>
+						  <a class="dropdown-item" id= "price-input" value="2">$$</a>
+						  <a class="dropdown-item" id= "price-input" value="3">$$$</a>
+						  <a class="dropdown-item" id= "price-input" value="4">$$$$</a>
+
+						</div>
+
+					  </div>
+
+					  <div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenuButton" id = "price-input" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  Max Distance
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							  <a class="dropdown-item" id="distance-input" value="1">1 Mile</a>
+							  <a class="dropdown-item" id="distance-input" value="2">2 Miles</a>
+							  <a class="dropdown-item" id="distance-input" value="5">5 Miles</a>
+							  <a class="dropdown-item" id="distance-input" value="10">10 Miles</a>
+							</div>
+							<div></div>
+						  </div>
+
+					<!-- <div class="form-group">
 						<input type="text" class="form-control p-2" id="distance-input" placeholder="Enter max distance">
-					</div>
-					<div class="form-group">
+					</div> -->
+					<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenuButton" id = "price-input" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  Min Rating
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							  <a class="dropdown-item" id="rating-input">★★★★★</a>
+							  <a class="dropdown-item" id="rating-input">★★★★</a>
+							  <a class="dropdown-item" id="rating-input">★★★</a>
+							  <a class="dropdown-item" id="rating-input">★★</a>
+							  <a class="dropdown-item" id="rating-input">★</a>
+							</div>
+						  </div>
+
+					<!-- <div class="form-group">
 						<input type="text" class="form-control p-2" id="rating-input" placeholder="Enter rating">
-					</div>
+					</div> -->
 				</form>
 			</div>
 			<!-- Spin Button Section -->
@@ -55,13 +94,14 @@
 		<!-- Images are dumped here -->
 		<div class="row">
 			<div class="col-12 text-center" id="img-box"></div>
-
-			<div class="col-12 text-center" id="results"></div>
+			<div class="col-12 text-center" id="result"></div>
 		</div>
 		
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
 
 </body>
