@@ -35,52 +35,35 @@
 						<input type="text" class="form-control p-2" id="keyword-input" placeholder="Enter keyword">
 					</div>
 
-					<div class="dropdown">
-						<button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenuButton" id = "price-input" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						  Price
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						  <a class="dropdown-item" id= "price-input" value="1">$</a>
-						  <a class="dropdown-item" id= "price-input" value="2">$$</a>
-						  <a class="dropdown-item" id= "price-input" value="3">$$$</a>
-						  <a class="dropdown-item" id= "price-input" value="4">$$$$</a>
+					
+						
+						<select class="custom-select mb-3" id= "price-input">
+						  <option selected>Select Price</option>
+						  <option value="1">$</option>
+						  <option value="2">$$</option>
+						  <option value="3">$$$</option>
+						  <option value="4">$$$$</option>
+						</select>
 
-						</div>
+			            <select class="custom-select mb-3" id= "distance-input">
+						  <option selected>Select Distance</option>
+						  <option value="1">1 mile</option>
+						  <option value="2">2 Miles</option>
+						  <option value="5">5 Miles</option>
+						  <option value="10">10 Miles</option>
+						</select>
 
-					  </div>
-
-					  <div class="dropdown">
-							<button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenuButton" id = "price-input" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							  Max Distance
-							</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							  <a class="dropdown-item" id="distance-input" value="1">1 Mile</a>
-							  <a class="dropdown-item" id="distance-input" value="2">2 Miles</a>
-							  <a class="dropdown-item" id="distance-input" value="5">5 Miles</a>
-							  <a class="dropdown-item" id="distance-input" value="10">10 Miles</a>
-							</div>
-							<div></div>
-						  </div>
-
-					<!-- <div class="form-group">
-						<input type="text" class="form-control p-2" id="distance-input" placeholder="Enter max distance">
-					</div> -->
-					<div class="dropdown">
-							<button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenuButton" id = "price-input" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							  Min Rating
-							</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							  <a class="dropdown-item" id="rating-input">★★★★★</a>
-							  <a class="dropdown-item" id="rating-input">★★★★</a>
-							  <a class="dropdown-item" id="rating-input">★★★</a>
-							  <a class="dropdown-item" id="rating-input">★★</a>
-							  <a class="dropdown-item" id="rating-input">★</a>
-							</div>
-						  </div>
-
-					<!-- <div class="form-group">
-						<input type="text" class="form-control p-2" id="rating-input" placeholder="Enter rating">
-					</div> -->
+						 <select class="custom-select mb-3" id= "rating-input">
+						  <option selected>Select Rating</option>
+						  <option value="5">★★★★★</option>
+						  <option value="4">★★★★</option>
+						  <option value="3">★★★</option>
+						  <option value="2">★★</option>
+						  <option value="1">★</option>
+						  
+						</select>
+				
+							  
 				</form>
 			</div>
 			<!-- Spin Button Section -->

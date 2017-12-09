@@ -37,7 +37,7 @@ $("#yelp-icon").on("click", function() {
 
 	index = 0;
 	rnd = Math.floor(Math.random() * imgArray.length);
-	console.log(rnd);
+	//console.log(rnd);
 	
 	if (!yelpPressed) {
 
@@ -52,20 +52,23 @@ $("#yelp-icon").on("click", function() {
 	}
 	
 //get the user form input stored in variables
-price =parseInt($("#price-input").val().trim());
+price = parseInt($("#price-input").val().trim());
+console.log(price);
+console.log($("#price-input").val().trim());
 rating =$("#rating-input").val().trim();
+console.log(rating);
 keyword =$("#keyword-input").val().trim();
 
 radius = (parseInt($("#distance-input").val().trim())*1600);
 
-
+console.log(radius);
 
 
 //ajax call to yelp api with user location  
 const ywsid = 'l-P4nQ-2wji4g-38vo_Eln9tkxP2DQrT7-c7yJ_Z4w047wrlRa1WIw86YQw1cRE3HtTwOLcyXBgN6ycXdsea-Bgx-QmZf4w79h44yht4cZyPCLCuy3A58uAiAP4pWnYx'
 const corsAnywhere = 'https://cors-anywhere.herokuapp.com/'
-console.log(keyword,distance);
-var yurl = 'https://api.yelp.com/v3/businesses/search?term='+keyword+'&location='+ loc+ '&limit=50' +'&radius<='+radius+'&price='+price
+console.log(keyword);
+var yurl = 'https://api.yelp.com/v3/businesses/search?term='+keyword+'&location='+ loc+ '&limit=50' +'&radius='+radius+'&price='+price
 $.ajax({
  method: 'GET',
  url: corsAnywhere + yurl,
