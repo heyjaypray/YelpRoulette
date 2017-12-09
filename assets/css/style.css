@@ -14,6 +14,15 @@ span {
 .img-result {
 	width: 400px;
 }
+btn{
+	margin: 20px;
+}
+#result{
+	
+		display:block;
+		color:white;
+		font-size: 20px;
+	}
 
 @media screen and (min-width: 576px) {
 
