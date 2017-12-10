@@ -3,7 +3,11 @@ var index, rnd, slider, image, rndIndex;
 var loc= "Tucson";
 var price, distance, rating;
 
+$(".loading").hide();
+
 $("#yelp-icon").on("click", function() {
+
+	$(".loading").show();
 
 		
 	//get the user form input stored in variables
@@ -18,14 +22,21 @@ $("#yelp-icon").on("click", function() {
 	const corsAnywhere = 'https://cors-anywhere.herokuapp.com/'
 	console.log(keyword);
 	var yurl = 'https://api.yelp.com/v3/businesses/search?term='+keyword+'&location='+ loc+ '&limit=50' +'&radius='+radius+'&price='+price
+
 	$.ajax({
 	method: 'GET',
 	url: corsAnywhere + yurl,
 	headers: {
 	'authorization': 'Bearer ' + ywsid
 	}
-	}).done(function(response) {
+	})
+	
+	.done(function(response) {
+
+		$(".loading").hide();
 		console.log(response);
+
+		// $body.removeClass("loading");
 
 		var index = Math.floor(Math.random() * response.businesses.length);
 		var result = response.businesses[index].name;
