@@ -8,28 +8,36 @@ span {
 }
 
 #yelp-icon {
-	width: 275px;
+	width: 100%;
+	cursor: pointer;
 }
 
 .img-result {
-	width: 400px;
+	height: 300px;
 }
-btn{
+
+.btn{
 	margin: 20px;
 }
+
 #result{
-	
-		display:block;
-		color:white;
-		font-size: 20px;
-	}
+	display:block;
+	color:white;
+	font-size: 20px;
+}
 
-
-
-@media screen and (min-width: 576px) {
+@media screen and (max-width: 575px) {
 
 	#yelp-icon {
-		width: 175px;
+		width: 75%;
+	}
+
+}
+
+@media screen and (min-width: 992px) {
+
+	#form {
+		padding-top: 5%;
 	}
 
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
@@ -7,12 +7,13 @@
 	<!-- Viewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Yelp Roulette</title>
+	<!-- jQuery -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- Bootstrap -->
-	<style></style>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<!-- CSS stylesheet -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<!-- <script type="text/javascript" src="assets/javascript/popper.min.js"></script> -->
+	
 </head>
 
 <body>
@@ -26,65 +27,66 @@
 		</div>
 		<!-- Main Content -->
 		<div class="row mb-2 mt-2" id="div-main">
-
-			<div class="col-md-2"></div>
-			<!-- Input Section -->
-			<div class="col-12 col-sm-8 col-md-5 col-lg-5" id="form">
+			<!-- Spacing on the left -->
+			<div class="col-md-1 col-lg-1"></div>
+			<!-- Form Section -->
+			<div class="col-12 col-sm-8 col-md-7 col-lg-8" id="form">
 				<form>
 					<div class="form-group">
 						<input type="text" class="form-control p-2" id="keyword-input" placeholder="Enter keyword">
 					</div>
-
-					
-						
-						<select class="custom-select mb-3" id= "price-input">
-						  <option selected>Select Price</option>
-						  <option value="1">$</option>
-						  <option value="2">$$</option>
-						  <option value="3">$$$</option>
-						  <option value="4">$$$$</option>
-						</select>
-
-			            <select class="custom-select mb-3" id= "distance-input">
-						  <option selected>Select Distance</option>
-						  <option value="1">1 mile</option>
-						  <option value="2">2 Miles</option>
-						  <option value="5">5 Miles</option>
-						  <option value="10">10 Miles</option>
-						</select>
-
-						 <select class="custom-select mb-3" id= "rating-input">
-						  <option selected>Select Rating</option>
-						  <option value="5">★★★★★</option>
-						  <option value="4">★★★★</option>
-						  <option value="3">★★★</option>
-						  <option value="2">★★</option>
-						  <option value="1">★</option>
-						  
-						</select>
-				
-							  
+					<div class="row">
+						<div class="col-12 col-lg-4">	
+							<select class="custom-select mb-3 w-100" id= "price-input">
+						    	<option selected>Select Price</option>
+						    	<option value="1">$</option>
+						    	<option value="2">$$</option>
+						    	<option value="3">$$$</option>
+						    	<option value="4">$$$$</option>
+							</select>
+						</div>
+						<div class="col-12 col-lg-4">
+				            <select class="custom-select mb-3 w-100" id= "distance-input">
+								<option selected>Select Distance</option>
+								<option value="1">1 mile</option>
+								<option value="2">2 Miles</option>
+								<option value="5">5 Miles</option>
+								<option value="10">10 Miles</option>
+							</select>
+						</div>
+						<div class="col-12 col-lg-4">
+							<select class="custom-select mb-3 w-100" id= "rating-input">
+							    <option selected>Select Rating</option>
+							    <option value="5">★★★★★</option>
+							    <option value="4">★★★★</option>
+							    <option value="3">★★★</option>
+							    <option value="2">★★</option>
+							    <option value="1">★</option>
+							</select>
+						</div>
+					</div>		  
 				</form>
 			</div>
 			<!-- Spin Button Section -->
-			<div class="col-12 col-sm-4 col-md-3 col-lg-3 p-2 text-center text-white">
+			<div class="col-12 col-sm-4 col-md-3 col-lg-2 p-2 text-center text-white">
 				<img src="assets/images/yelp-icon.png" id="yelp-icon" alt="Yelp icon">
-				<h3>SPIN!</h3>
+				<h4>SPIN!</h4>
 			</div>
-
-			<div class="col-md-2"></div>
-
+			<!-- Spacing on the right -->
+			<div class="col-md-1 col-lg-1"></div>
 		</div>
 		<!-- Images are dumped here -->
 		<div class="row">
 			<div class="col-12 text-center" id="img-box"></div>
 			<div class="col-12 text-center" id="result"></div>
 		</div>
-		
 	</div>
 
+	<!-- Popper JS for Bootstrap -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<!-- Bootstrap JS -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<!-- Javascript -->
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
 
 </body>
