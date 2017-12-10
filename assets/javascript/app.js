@@ -8,6 +8,9 @@ $(".loading").hide();
 $("#yelp-icon").on("click", function() {
 
 	$(".loading").show();
+	$("#img-box").hide();
+	$("#result").hide();
+
 
 		
 	//get the user form input stored in variables
@@ -34,6 +37,8 @@ $("#yelp-icon").on("click", function() {
 	.done(function(response) {
 
 		$(".loading").hide();
+		$("#img-box").show();
+		$("#result").show();
 		console.log(response);
 
 		// $body.removeClass("loading");
