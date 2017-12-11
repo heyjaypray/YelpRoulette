@@ -1,7 +1,7 @@
 var index, rnd, slider, image, rndIndex;
 
-var loc= "Tucson";
-var price, distance, rating;
+
+var price, distance, rating, loc;
 
 $(".loading").hide();
 
@@ -14,6 +14,7 @@ $("#yelp-icon").on("click", function() {
 
 		
 	//get the user form input stored in variables
+	loc= $("#location-input").val();
 	price = parseInt($("#price-input").val().trim());
 	rating =$("#rating-input").val().trim();
 	keyword =$("#keyword-input").val().trim();
