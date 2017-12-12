@@ -3,23 +3,16 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
-span {
-	font-size: 30px;
-	margin-left: -5px;
-}
+.focus { border: 1px solid #d32323; }
 
 #yelp-icon {
-	width: 100%;
+	width: 90%;
 	cursor: pointer;
 }
 
-.img-result {
-	height: 300px;
-}
+.img-result { height: 300px; }
 
-.btn{
-	margin: 20px;
-}
+.btn{ margin: 20px; }
 
 #result{
 	display:block;
@@ -28,18 +21,30 @@ span {
 }
 
 @media screen and (max-width: 575px) {
-
-	#yelp-icon {
-		width: 75%;
-	}
-
+	#yelp-icon { width: 60%; }
 }
 
 @media screen and (min-width: 992px) {
-
-	#form {
-		padding-top: 3%;
-	}
-
+	#form { padding-top: 1%; }
 }
 
+i {
+	color: #d32323;
+	font-size: 130%;
+	position: absolute;
+}
+
+.ion-text, .ion-price,
+.ion-radius, .ion-rating {
+	position: relative;
+}
+
+.i-location { top: 6px;	right: 24px; }
+
+.i-keyword { top: 64px;	right: 24px; }
+
+.i-price { top: 4px; right: 40px; }
+
+.i-radius {	top: 4px; right: 40px; }
+
+.i-rating {	top: 4px; right: 40px; }

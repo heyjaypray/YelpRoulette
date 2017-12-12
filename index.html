@@ -9,6 +9,8 @@
 	<title>Yelp Roulette</title>
 	<!-- jQuery -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Ionicons CSS Library -->
+	<link rel="stylesheet" type="text/css" href="assets/css/ionicons.min.css">
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<!-- Google Fonts -->
@@ -32,46 +34,51 @@
 			<!-- Spacing on the left -->
 			<div class="col-md-1 col-lg-1"></div>
 			<!-- Form Section -->
-			<div class="col-12 col-sm-8 col-md-7 col-lg-8" id="form">
+			<div class="col-12 col-sm-7 col-md-6 col-lg-8" id="form">
 				<form>
-					<div class="form-group">
-						<input type="text" class="form-control p-2 mb-2" id="location-input" placeholder="Enter location">
-						<input type="text" class="form-control p-2" id="keyword-input" placeholder="Enter keyword">
+					<div class="form-group mb-3 ion-text">
+						<input type="text" class="form-control p-2 mb-3 foc" id="location" placeholder="Enter location">
+						<i class="ion-ios-close-outline i-location"></i>
+						<input type="text" class="form-control p-2 foc" id="keyword" placeholder="Enter keyword">
+						<i class="ion-ios-close-outline i-keyword"></i>
 					</div>
 					<div class="row">
-						<div class="col-12 col-lg-4">	
-							<select class="custom-select mb-3 w-100" id= "price-input">
-						    	<option value="" selected>Select Price</option>
+						<div class="col-12 col-lg-4 ion-price">	
+							<select class="custom-select mb-3 w-100 foc" id="price">
+						    	<option value="0" selected>Select Price</option>
 						    	<option value="1">$</option>
 						    	<option value="2">$$</option>
 						    	<option value="3">$$$</option>
 						    	<option value="4">$$$$</option>
 							</select>
+							<i class="ion-ios-close-outline i-price"></i>
 						</div>
-						<div class="col-12 col-lg-4">
-				            <select class="custom-select mb-3 w-100" id= "distance-input">
-								<option value="" selected>Select Distance</option>
+						<div class="col-12 col-lg-4 ion-radius">
+				            <select class="custom-select mb-3 w-100 foc" id="radius">
+								<option value="0" selected>Select Distance</option>
 								<option value="1">1 mile</option>
 								<option value="2">2 Miles</option>
 								<option value="5">5 Miles</option>
 								<option value="10">10 Miles</option>
 							</select>
+							<i class="ion-ios-close-outline i-radius"></i>
 						</div>
-						<div class="col-12 col-lg-4">
-							<select class="custom-select mb-3 w-100" id= "rating-input">
-							    <option value="" selected>Select Rating</option>
+						<div class="col-12 col-lg-4 ion-rating">
+							<select class="custom-select mb-3 w-100 foc" id="rating">
+								<option value="" selected>Select Rating</option>
 							    <option value="5">★★★★★</option>
 							    <option value="4">★★★★</option>
 							    <option value="3">★★★</option>
 							    <option value="2">★★</option>
 							    <option value="1">★</option>
 							</select>
+							<i class="ion-ios-close-outline i-rating"></i>
 						</div>
 					</div>		  
 				</form>
 			</div>
 			<!-- Spin Button Section -->
-			<div class="col-12 col-sm-4 col-md-3 col-lg-2 p-2 text-center text-white">
+			<div class="col-12 col-sm-5 col-md-4 col-lg-2 p-2 text-center text-white">
 				<img src="assets/images/yelp-icon.png" id="yelp-icon" alt="Yelp icon">
 				<h4>SPIN!</h4>
 			</div>
