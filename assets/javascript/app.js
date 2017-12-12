@@ -1,28 +1,38 @@
 var loc, keyword, price, radius, rating;
 var formValid;
 
+$("i").hide();
+
 function validateForm() {
 	formValid = true;
 
-	if (loc === "") { formValid = false; } 
-	if (keyword === "") { formValid = false; }
-	if (price === "") { formValid = false; } 
-	if (radius === "") { formValid = false; } 
-	if (rating === "") { formValid = false; }  
+	if (loc === "") { formValid = false; $("#location").addClass("focus"); $(".i-location").show(); } 
+	if (keyword === "") { formValid = false; $("#keyword").addClass("focus"); $(".i-keyword").show(); }
+	if (price === 0) { formValid = false; $("#price").addClass("focus"); $(".i-price").show(); } 
+	if (radius === 0) { formValid = false; $("#radius").addClass("focus"); $(".i-radius").show(); } 
+	if (rating === "") { formValid = false; $("#rating").addClass("focus"); $(".i-rating").show(); }  
 
 	return formValid;
 }
+
+$(".foc").focus(function() {
+
+	$(this).removeClass("focus");
+	var id = $(this).attr("id");
+	$(".i-" + id).hide();
+	
+})
 
 $(".loading").hide();
 
 $("#yelp-icon").on("click", function() {
 
 	//get the user form input stored in variables
-	loc 	= $("#location-input").val().trim();
-	keyword = $("#keyword-input").val().trim();
-	price 	= parseInt($("#price-input").val());
-	radius 	= parseInt($("#distance-input").val()) * 1600;
-	rating 	= $("#rating-input").val();
+	loc 	= $("#location").val().trim();
+	keyword = $("#keyword").val().trim();
+	price 	= parseInt($("#price").val());
+	radius 	= parseInt($("#radius").val()) * 1600;
+	rating 	= $("#rating").val();
 	
 	//call validateForm() function to make sure all fields are completed
 	validateForm();
@@ -73,7 +83,7 @@ $("#yelp-icon").on("click", function() {
 		}); 
 
 	} else {
-		alert("Make sure all fields are completed!");
+		console.log("Make sure all fields are completed!");
 	}
 
 });
