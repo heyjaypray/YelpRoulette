@@ -1,5 +1,6 @@
 body {
 	background-color: #0073bb;
+	font-family: 'Raleway', sans-serif;
 }
 
 span {
@@ -37,7 +38,7 @@ span {
 @media screen and (min-width: 992px) {
 
 	#form {
-		padding-top: 5%;
+		padding-top: 3%;
 	}
 
 }
