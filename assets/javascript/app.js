@@ -24,6 +24,8 @@ $(".foc").focus(function() {
 })
 
 $(".loading").hide();
+$("#map").hide();
+
 
 $("#yelp-icon").on("click", function() {
 
@@ -42,6 +44,9 @@ $("#yelp-icon").on("click", function() {
 		$(".loading").show();
 		$("#img-box").hide();
 		$("#result").hide();
+		$("#map").hide();
+		$("#div-main").hide();
+		$("#yelp-icon").hide();
 
 
 
@@ -72,6 +77,9 @@ $("#yelp-icon").on("click", function() {
 			$(".loading").hide();
 			$("#img-box").show();
 			$("#result").show();
+			$("#map").show();
+			$("#yelp-icon").show();
+			
 			
 			console.log(response);
 
@@ -99,17 +107,17 @@ $("#yelp-icon").on("click", function() {
 			$("#img-box").append("<h3><b>Enjoy this selection</b></h3>");
 
 
-			 function initMap() {
-       var uluru = {lat:  lati, lng: long};
-       console.log(result, lati,long);
-			
-       var map = new google.maps.Map(document.getElementById('map'), {
-         zoom: 15,
-         center: uluru
-       });
-       var marker = new google.maps.Marker({
-         position: uluru,
-         map: map
+			function initMap() {
+				var uluru = {lat:  lati, lng: long};
+				console.log(result, lati,long);
+						
+				var map = new google.maps.Map(document.getElementById('map'), {
+					zoom: 15,
+					center: uluru
+				});
+				var marker = new google.maps.Marker({
+					position: uluru,
+					map: map
        });
      }
 

@@ -15,7 +15,7 @@ body {
 .focus { border: 1px solid #d32323; }
 
 #yelp-icon {
-	width: 90%;
+	width: 20%;
 	cursor: pointer;
 }
 
@@ -61,7 +61,7 @@ i {
 .container {
 	background-color: #d1f3ff;
 	max-width: 960px;
-	margin-top: 10%;
+	margin-top: 2%;
 	border-radius: 10px;
 	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6), 0 15px 30px 0 rgba(0, 0, 0, 0.3);
 
@@ -79,4 +79,9 @@ input, select {
 
 select {
 	font-size: 75%;
+}
+
+#map {
+	position: relative;
+	height: 300px;
 }
