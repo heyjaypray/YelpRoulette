@@ -6,7 +6,7 @@ $("i").hide();
 function validateForm() {
 	formValid = true;
 
-	if (loc === "") { formValid = false; $("#location").addClass("focus"); $(".i-location").show(); } 
+	//if (loc === "") { formValid = false; $("#location").addClass("focus"); $(".i-location").show(); } 
 	if (keyword === "") { formValid = false; $("#keyword").addClass("focus"); $(".i-keyword").show(); }
 	if (price === 0) { formValid = false; $("#price").addClass("focus"); $(".i-price").show(); } 
 	if (radius === 0) { formValid = false; $("#radius").addClass("focus"); $(".i-radius").show(); } 
@@ -43,11 +43,24 @@ $("#yelp-icon").on("click", function() {
 		$("#img-box").hide();
 		$("#result").hide();
 
+
+
 		//ajax call to yelp api with user location  
 		const ywsid = "l-P4nQ-2wji4g-38vo_Eln9tkxP2DQrT7-c7yJ_Z4w047wrlRa1WIw86YQw1cRE3HtTwOLcyXBgN6ycXdsea-Bgx-QmZf4w79h44yht4cZyPCLCuy3A58uAiAP4pWnYx";
-		const corsAnywhere = "https://cors-anywhere.herokuapp.com/";
-		var yurl = "https://api.yelp.com/v3/businesses/search?term=" + keyword + "&location=" + loc + "&limit=50&radius=" + radius + "&price=" + price;
+		const corsAnywhere = "https://cors-anywhere.herokuapp.com/"
+		
 		console.log(keyword);
+        var loc,lati,long;
+// geolocation api call
+	$.get("https://api.ipdata.co", function (data) {
+		console.log(JSON.stringify(data, null, 4));
+	 loc= data.postal;
+	 	
+
+	 console.log(loc);
+	
+	//ajax call to yelp has to be inside geolocation call function
+	 var yurl = "https://api.yelp.com/v3/businesses/search?term=" + keyword + "&location=" + loc + "&limit=50"+ "&radius=" + radius + "&price=" + price;
 
 		$.ajax({
 			method: "GET",
@@ -59,6 +72,7 @@ $("#yelp-icon").on("click", function() {
 			$(".loading").hide();
 			$("#img-box").show();
 			$("#result").show();
+			
 			console.log(response);
 
 			// $body.removeClass("loading");
@@ -68,9 +82,12 @@ $("#yelp-icon").on("click", function() {
 			var address = response.businesses[index].location.display_address[0];
 			var city 	= response.businesses[index].location.display_address[1];
 			var image 	= response.businesses[index].image_url;
+			lati= Number(response.businesses[index].coordinates.latitude);
+			long= Number(response.businesses[index].coordinates.longitude);
+
 			// rndIndex = response.businesses.length
 
-			console.log(result);
+			console.log(result, lati,long);
 			$("#result").html(result + "<br>");
 			$("#result").append(address + "<br>");
 			$("#result").append(city);
@@ -80,11 +97,42 @@ $("#yelp-icon").on("click", function() {
 			img.attr("src", image);
 			$("#img-box").html(img);
 			$("#img-box").append("<h3><b>Enjoy this selection</b></h3>");
-		}); 
+
+
+			 function initMap() {
+       var uluru = {lat:  lati, lng: long};
+       console.log(result, lati,long);
+			
+       var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 15,
+         center: uluru
+       });
+       var marker = new google.maps.Marker({
+         position: uluru,
+         map: map
+       });
+     }
+
+initMap();
+
+
+
+
+		});
+
+
+
+	}, "jsonp");
+ 
 
 	} else {
 		console.log("Make sure all fields are completed!");
 	}
+
+
+
+
+
 
 });
 

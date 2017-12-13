@@ -3,6 +3,15 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
+/* css for map*/
+#map {
+   height: 500px;
+   width: 50%;
+   margin-bottom: 15px;
+
+  }
+
+
 .focus { border: 1px solid #d32323; }
 
 #yelp-icon {
