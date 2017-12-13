@@ -65,7 +65,7 @@ $("#yelp-icon").on("click", function() {
 	 console.log(loc);
 	
 	//ajax call to yelp has to be inside geolocation call function
-	 var yurl = "https://api.yelp.com/v3/businesses/search?term=" + keyword + "&location=" + loc + "&limit=50"+ "&radius=" + radius + "&price=" + price;
+	 	var yurl = "https://api.yelp.com/v3/businesses/search?term=" + keyword + "&location=" + loc + "&limit=50"+ "&radius=" + radius + "&price=" + price;
 
 		$.ajax({
 			method: "GET",
@@ -73,6 +73,8 @@ $("#yelp-icon").on("click", function() {
 			headers: {
 				"authorization": "Bearer " + ywsid
 			}
+			
+			
 		}).done(function(response) {
 			$(".loading").hide();
 			$("#img-box").show();
@@ -118,16 +120,14 @@ $("#yelp-icon").on("click", function() {
 				var marker = new google.maps.Marker({
 					position: uluru,
 					map: map
-       });
-     }
+	   			});
+     		}
 
-initMap();
+			initMap();
 
-
-
-
+		}).fail(function(response){
+			alert("We are experiencing problems")
 		});
-
 
 
 	}, "jsonp");
@@ -137,10 +137,6 @@ initMap();
 		console.log("Make sure all fields are completed!");
 	}
 
-
-
-
-
-
 });
+
 
