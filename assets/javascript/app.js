@@ -45,6 +45,8 @@ $("#yelp-icon").on("click", function() {
 		$("#img-box").hide();
 		$("#result").hide();
 		$("#map").hide();
+		$("#div-main").hide();
+		$("#yelp-icon").hide();
 
 
 
@@ -75,7 +77,9 @@ $("#yelp-icon").on("click", function() {
 			$(".loading").hide();
 			$("#img-box").show();
 			$("#result").show();
-			$("#map").show()
+			$("#map").show();
+			$("#yelp-icon").show();
+			
 			
 			console.log(response);
 
