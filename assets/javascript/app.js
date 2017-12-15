@@ -1,4 +1,4 @@
-var loc, keyword, price, radius, rating;
+var keyword, price, radius, rating;
 var formValid;
 
 $("i").hide();
@@ -6,7 +6,6 @@ $("i").hide();
 function validateForm() {
 	formValid = true;
 
-	//if (loc === "") { formValid = false; $("#location").addClass("focus"); $(".i-location").show(); } 
 	if (keyword === "") { formValid = false; $("#keyword").addClass("focus"); $(".i-keyword").show(); }
 	if (price === 0) { formValid = false; $("#price").addClass("focus"); $(".i-price").show(); } 
 	if (radius === 0) { formValid = false; $("#radius").addClass("focus"); $(".i-radius").show(); } 
@@ -30,7 +29,6 @@ $("#map").hide();
 $("#yelp-icon").on("click", function() {
 
 	//get the user form input stored in variables
-	loc 	= $("#location").val().trim();
 	keyword = $("#keyword").val().trim();
 	price 	= parseInt($("#price").val());
 	radius 	= parseInt($("#radius").val()) * 1600;
@@ -54,6 +52,7 @@ $("#yelp-icon").on("click", function() {
 		const ywsid = "l-P4nQ-2wji4g-38vo_Eln9tkxP2DQrT7-c7yJ_Z4w047wrlRa1WIw86YQw1cRE3HtTwOLcyXBgN6ycXdsea-Bgx-QmZf4w79h44yht4cZyPCLCuy3A58uAiAP4pWnYx";
 		const corsAnywhere = "https://cors-anywhere.herokuapp.com/"
 		
+
 		
         var loc,lati,long,origin_lat,origin_long,org;
 	    // geolocation api call function
@@ -95,6 +94,7 @@ $("#yelp-icon").on("click", function() {
 				long= Number(response.businesses[index].coordinates.longitude);
 
 				// rndIndex = response.businesses.length
+
 
 				console.log(result, lati,long);
 				$("#result").html(result + "<br>");
