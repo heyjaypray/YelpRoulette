@@ -4,22 +4,16 @@ body {
 }
 
 /* css for map*/
-#map {
-   height: 500px;
-   width: 50%;
-   margin-bottom: 15px;
 
-  }
 
 
 .focus { border: 1px solid #d32323; }
 
 #yelp-icon {
-	width: 20%;
+	/*width: 30%;*/
+	height: 175px;
 	cursor: pointer;
 }
-
-.img-result { height: 300px; }
 
 .btn{ margin: 20px; }
 
@@ -29,12 +23,36 @@ body {
 	font-size: 20px;
 }
 
-@media screen and (max-width: 575px) {
-	#yelp-icon { width: 60%; }
+.container {
+	background-color: #d1f3ff;
+	max-width: 95%;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	border-radius: 10px;
+	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6), 0 15px 30px 0 rgba(0, 0, 0, 0.3);
+	height: calc(100vh - 50px);
+}
+
+@media screen and (max-width: 992px) {
+	#yelp-icon { /*width: 25%;*/ height: 175px; }
+}
+
+@media screen and (max-width: 768px) {
+	#yelp-icon { /*width: 35%;*/ height: 175px; }
+
+	.container {
+		height: 950px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	#yelp-icon { /*width: 50%;*/ height: 175px; }
 }
 
 @media screen and (min-width: 992px) {
-	#form { padding-top: 1%; }
+	.container {
+		width: 960px;
+	}
 }
 
 i {
@@ -58,15 +76,6 @@ i {
 
 .i-rating {	top: 4px; right: 40px; }
 
-.container {
-	background-color: #d1f3ff;
-	max-width: 960px;
-	margin-top: 2%;
-	border-radius: 10px;
-	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6), 0 15px 30px 0 rgba(0, 0, 0, 0.3);
-
-}
-
 h4 {
 	color: #1aaddd;
 	font-weight: bold;
@@ -82,6 +91,11 @@ select {
 }
 
 #map {
-	position: relative;
-	height: 300px;
+	height: 200px;
+	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6), 0 15px 30px 0 rgba(0, 0, 0, 0.3);
+}
+
+.img-result { 
+	height: 200px; 
+	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6), 0 15px 30px 0 rgba(0, 0, 0, 0.3);
 }
