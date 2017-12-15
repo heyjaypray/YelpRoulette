@@ -25,8 +25,8 @@ $(".foc").focus(function() {
 $(".loading").hide();
 $("#map").hide();
 
-//click event on yelp icon button
-$("#yelp-icon").on("click", function() {
+//click event on search button
+$("#search-btn").on("click", function() {
 
 	//get the user form input stored in variables
 	keyword = $("#keyword").val().trim();
@@ -44,7 +44,7 @@ $("#yelp-icon").on("click", function() {
 		$("#result").hide();
 		$("#map").hide();
 		$("#div-main").hide();
-		$("#yelp-icon").hide();
+		$("#search-btn").hide();
 
 		// api key and cors check declared for ajax call to yelp api  
 		const ywsid 		= "l-P4nQ-2wji4g-38vo_Eln9tkxP2DQrT7-c7yJ_Z4w047wrlRa1WIw86YQw1cRE3HtTwOLcyXBgN6ycXdsea-Bgx-QmZf4w79h44yht4cZyPCLCuy3A58uAiAP4pWnYx";
@@ -72,7 +72,7 @@ $("#yelp-icon").on("click", function() {
 				$("#img-box").show();
 				$("#result").show();
 				$("#map").show();
-				$("#yelp-icon").show();
+				$("#search-btn").show();
 				
 				console.log(response);
 
