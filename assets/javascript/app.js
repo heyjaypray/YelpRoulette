@@ -1,4 +1,4 @@
-var loc, keyword, price, radius, rating;
+var keyword, price, radius, rating;
 var formValid;
 
 $("i").hide();
@@ -6,7 +6,6 @@ $("i").hide();
 function validateForm() {
 	formValid = true;
 
-	//if (loc === "") { formValid = false; $("#location").addClass("focus"); $(".i-location").show(); } 
 	if (keyword === "") { formValid = false; $("#keyword").addClass("focus"); $(".i-keyword").show(); }
 	if (price === 0) { formValid = false; $("#price").addClass("focus"); $(".i-price").show(); } 
 	if (radius === 0) { formValid = false; $("#radius").addClass("focus"); $(".i-radius").show(); } 
@@ -30,7 +29,6 @@ $("#map").hide();
 $("#yelp-icon").on("click", function() {
 
 	//get the user form input stored in variables
-	loc 	= $("#location").val().trim();
 	keyword = $("#keyword").val().trim();
 	price 	= parseInt($("#price").val());
 	radius 	= parseInt($("#radius").val()) * 1600;
@@ -59,12 +57,12 @@ $("#yelp-icon").on("click", function() {
 // geolocation api call
 	$.get("https://api.ipdata.co", function (data) {
 		console.log(JSON.stringify(data, null, 4));
-	 loc= data.postal;
+		var loc= data.postal;
 	 	
 
-	 console.log(loc);
+	 	console.log(loc);
 	
-	//ajax call to yelp has to be inside geolocation call function
+		//ajax call to yelp has to be inside geolocation call function
 	 	var yurl = "https://api.yelp.com/v3/businesses/search?term=" + keyword + "&location=" + loc + "&limit=50"+ "&radius=" + radius + "&price=" + price;
 
 		$.ajax({
