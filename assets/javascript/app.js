@@ -146,9 +146,9 @@ $("#search-btn").on("click", function() {
 					}).done(function(response1) {
 			        	console.log(response1.rows[0].elements[0].duration.text);
 		            	//append to div below maps
-		            	$("#time-to-dest").append("Time to destination " + "<strong>" + response1.rows[0].elements[0].duration.text + "</strong>");
+		            	$("#time-to-dest").html("Time to destination " + "<strong>" + response1.rows[0].elements[0].duration.text + "</strong>");
 			        }); // ajax call to find time to reach destination ends
-	            }, 3000);  
+	            }, 500);  
 
 			}).fail(function(response){
 				alert("We are experiencing problems");

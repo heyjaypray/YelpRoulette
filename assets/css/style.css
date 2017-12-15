@@ -75,11 +75,10 @@ i {
 }
 
 /* Layout ordering */
-.loading { order: -1; }
 
 #img-box { order: 1; }
 
-#map-box { order: 2;} 
+#map { order: 2;} 
 
 #result { order: 3; }
 
@@ -99,13 +98,11 @@ i {
 		height: 950px;
 	}
 
-	.loading { order: -1; }
-
 	#img-box { order: 1; }
 
-	#map-box { order: 3; }
-
 	#result { order: 2; }
+
+	#map { order: 3; }
 
 	#time-to-dest { order: 4; }
 
