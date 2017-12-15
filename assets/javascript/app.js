@@ -101,10 +101,10 @@ $("#yelp-icon").on("click", function() {
 			$("#result").append(city);
 
 			var img = $("<img>");
-			img.addClass("img-result img-thumbnail");
+			img.addClass("img-result");
 			img.attr("src", image);
 			$("#img-box").html(img);
-			$("#img-box").append("<h3><b>Enjoy this selection</b></h3>");
+			//$("#img-box").append("<h3><b>Enjoy this selection</b></h3>");
 
 
 			function initMap() {
