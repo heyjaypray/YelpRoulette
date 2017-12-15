@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<!-- Viewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Yelp Roulette</title>
+	<title>I can't decide</title>
 	<!-- jQuery -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- Ionicons CSS Library -->
@@ -22,7 +22,7 @@
 
 <body>
 
-	<div class="container mb-5">
+	<div class="container">
 		<!-- Header -->
 		<div class="row mb-3 mt-2 pr-4 pl-4">
 			<div class="col-12 col-sm-10 col-md-8 col-lg-6 p-2 mx-auto text-center">
@@ -75,37 +75,21 @@
 					</div>		  
 				</form>
 			</div>
-			<div class="col-1 col-sm-2 col-md-3 col-lg-3"></div></div>
-
-
-			
-
-		
-			
-		
+			<div class="col-1 col-sm-2 col-md-3 col-lg-3"></div>
+		</div>
 		<!-- Images are dumped here -->
-		
 		<div class="row app">
 			<div class = "col-12 text-center loading">
-				<img src="assets/images/Spinner.svg" alt="loading-svg">
+				<img src="assets/images/Spinner.svg" alt="Loading animation">
 			</div>
 			<div class="col-12 col-md-6 text-center mb-3" id="img-box"></div>
 			<div class="mx-auto col-10 col-md-5 mb-3" id="map"></div>
-			<div class="col-12 text-center mt-3 mb-2" id="result"></div>
+			<div class="col-12 col-md-6 text-center mt-3 mb-2" id="result"></div>
+			<div class="col-12 col-md-6 text-center mt-3 mb-2" id="time-to-dest"></div>
 			<div class="col-12 mb-3 text-center yelp">
-				<img src="assets/images/icon.png" id="yelp-icon" alt="Yelp icon">
+				<img src="assets/images/icon.png" id="search-btn" alt="Restaurant location icon">
 			</div>
-
-			<div class="col-10 img-responsive mx-auto" id="map"></div>
-			<div class="col-12 text-center" id="time-to-dest"></div>
-
-			
-
 		</div>
-
-
-
-
 	</div>
 		
 	<!-- Popper JS for Bootstrap -->
@@ -117,6 +101,7 @@
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
     
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOrrP3F9BuMmSkdtiCkVdvjNFtbYQCZAE"   type="text/javascript"></script>
+
 </body>
 
 </html>
