@@ -3,25 +3,11 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
-/* css for map*/
-
-
-
-.focus { border: 1px solid #d32323; }
-
-#yelp-icon {
-	/*width: 30%;*/
-	height: 175px;
-	cursor: pointer;
-}
-
-.btn{ margin: 20px; }
-
-#result{
-	display:block;
-	color:#1aaddd;
-	font-size: 20px;
-}
+/*h4 {
+	color: #1aaddd;
+	font-weight: bold;
+	text-shadow: 2px 2px white;
+}*/
 
 .container {
 	background-color: #d1f3ff;
@@ -33,27 +19,17 @@ body {
 	height: calc(100vh - 50px);
 }
 
-@media screen and (max-width: 992px) {
-	#yelp-icon { /*width: 25%;*/ height: 175px; }
+/* ------------ FORM INPUT STYLES --------------- */
+input, select {
+	box-shadow: 0 5px 5px 0 rgba(8, 103, 136, 0.6), 0 0px 5px 0 rgba(8, 103, 136, 0.3);
 }
 
-@media screen and (max-width: 768px) {
-	#yelp-icon { /*width: 35%;*/ height: 175px; }
-
-	.container {
-		height: 950px;
-	}
+select {
+	font-size: 75%;
 }
 
-@media screen and (max-width: 576px) {
-	#yelp-icon { /*width: 50%;*/ height: 175px; }
-}
-
-@media screen and (min-width: 992px) {
-	.container {
-		width: 960px;
-	}
-}
+/* Form validation */
+.focus { border: 1px solid #d32323; }
 
 i {
 	color: #d32323;
@@ -75,19 +51,22 @@ i {
 .i-radius {	top: 4px; right: 40px; }
 
 .i-rating {	top: 4px; right: 40px; }
+/* ===================================================== */
 
-h4 {
-	color: #1aaddd;
-	font-weight: bold;
-	text-shadow: 2px 2px white;
+#search-btn {
+	height: 175px;
+	cursor: pointer;
 }
 
-input, select {
-	box-shadow: 0 5px 5px 0 rgba(8, 103, 136, 0.6), 0 0px 5px 0 rgba(8, 103, 136, 0.3);
+.img-result { 
+	height: 200px; 
+	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6), 0 15px 30px 0 rgba(0, 0, 0, 0.3);
 }
 
-select {
-	font-size: 75%;
+#result {
+	display:block;
+	color:#1aaddd;
+	font-size: 20px;
 }
 
 #map {
@@ -95,7 +74,51 @@ select {
 	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6), 0 15px 30px 0 rgba(0, 0, 0, 0.3);
 }
 
-.img-result { 
-	height: 200px; 
-	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6), 0 15px 30px 0 rgba(0, 0, 0, 0.3);
+/* Layout ordering */
+.loading { order: -1; }
+
+#img-box { order: 1; }
+
+#map-box { order: 2;} 
+
+#result { order: 3; }
+
+#time-to-dest { order: 4; }
+
+.yelp { order: 5; }
+
+/* -------------------- MEDIA QUERUIES -------------------- */
+@media screen and (max-width: 992px) {
+	#search-btn { height: 175px; }
 }
+
+@media screen and (max-width: 768px) {
+	#search-btn { height: 175px; }
+
+	.container {
+		height: 950px;
+	}
+
+	.loading { order: -1; }
+
+	#img-box { order: 1; }
+
+	#map-box { order: 3; }
+
+	#result { order: 2; }
+
+	#time-to-dest { order: 4; }
+
+	.yelp { order: 5; }
+}
+
+@media screen and (max-width: 576px) {
+	#search-btn { height: 175px; }
+}
+
+@media screen and (min-width: 992px) {
+	.container {
+		width: 960px;
+	}
+}
+/* ========================================================== */
