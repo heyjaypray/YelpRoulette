@@ -4,8 +4,17 @@ body {
 	/* background-image: url("../images/sunset.jpeg"); */
 	background-position: center;
 	background-size: cover;
-	height: 100vh;
+	min-height: 100vh;
 	font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+	/*font-family: 'Rubik Mono One', sans-serif;
+	font-family: 'Poiret One', cursive;*/
+	font-family: 'Acme', sans-serif;
+	color: #fff;
+	font-size: 110px;
+	text-shadow: 3px 3px #ff5500;
 }
 
 .container {
@@ -15,30 +24,30 @@ body {
 	margin-top: 25px;
 	margin-bottom: 25px;
 	border-radius: 10px;
-	/* box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6), 0 15px 30px 0 rgba(0, 0, 0, 0.3); */
+	/*box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6), 0 15px 30px 0 rgba(0, 0, 0, 0.3); */
 	height: calc(100vh - 50px);
 }
 
 /* ------------ FORM INPUT STYLES --------------- */
-input, select {
+#keyword, #rating, 
+#radius, #price {
 	box-shadow: 0 5px 5px 0 rgba(8, 103, 136, 0.6), 0 0px 5px 0 rgba(8, 103, 136, 0.3);
-	background-color:rgba(0, 0, 0, 0);
-    color:white;
-    border: none;
-    outline:none;
-    height:30px;
-    transition:height 1s;
-    -webkit-transition:height 1s;
+	background-color: rgba(100, 50, 0, 0.4);
+	color: #fff;
+	border-color: none; 
+}
+
+#keyword::placeholder {
+	color: #fff;
 }
 
 /* Form validation styles */
 .focus { 
-	border: 1px solid #d32323; 
-	background-color: #fff5f5;
+	border: 1px solid #ff5500;
 }
 
 i {
-	color: #d32323;
+	color: #ff5500;
 	font-size: 130%;
 	position: absolute;
 }
@@ -60,13 +69,13 @@ i {
 #search-btn {
 	height: 175px;
 	cursor: pointer;
-	opacity: 0.8;
+	opacity: 0.7;
 	transform: scale(1);
 	transition: transform 0.5s, opacity 0.5s;
 }
 
 #search-btn:hover {
-	transform: scale(1.25);
+	transform: scale(1.15);
 	opacity: 1;
 }
 
@@ -126,6 +135,8 @@ i {
 
 @media screen and (max-width: 576px) {
 	#search-btn { height: 175px; }
+
+	h1 { font-size: 60px; }
 }
 
 @media screen and (min-width: 992px) {
