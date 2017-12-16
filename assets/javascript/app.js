@@ -52,16 +52,14 @@ $("#search-btn").on("click", function() {
 		const corsAnywhere 	= "https://cors-anywhere.herokuapp.com/";
         var loc,lati,long,origin_lat,origin_long,org;
 
-	    // geolocation api call function
-		$.get("https://api.ipdata.co", function (data) {
-			console.log(JSON.stringify(data, null, 4));
-			loc 		= data.postal;
-			origin_long = data.longitude;
-			origin_lat 	= data.latitude;	
-	     
-			//ajax call to yelp has to be inside geolocation call function
-			var yurl = "https://api.yelp.com/v3/businesses/search?term=" + keyword + "&location=" + loc + "&limit=50"+ "&radius=" + radius + "&price=" + price;
-
+	     // google geolocation api call function
+		 navigator.geolocation.getCurrentPosition(function(position) {
+         console.log(position);
+		 origin_long=position.coords.longitude;
+		 origin_lat= position.coords.latitude;	
+	     var yurl = 'https://api.yelp.com/v3/businesses/search?term='+keyword+'&location='+ position.coords.latitude+","+position.coords.longitude+ '&limit=50';
+	     console.log(yurl);
+		
 			$.ajax({
 				method: "GET",
 				url: corsAnywhere + yurl,
@@ -156,7 +154,7 @@ $("#search-btn").on("click", function() {
 				alert("We are experiencing problems");
 			}); //ends YELP ajax call function
  
-		}, "jsonp"); //closes the ipdata api call function
+		}); //closes the google geolocation  api call function
 	} 
 	else 
 	{
