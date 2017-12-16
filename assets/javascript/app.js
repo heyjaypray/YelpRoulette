@@ -43,6 +43,7 @@ $("#search-btn").on("click", function() {
 		$("#img-box").hide();
 		$("#result").hide();
 		$("#map").hide();
+		$("#time-to-dest").hide();
 		$("#div-main").hide();
 		$("#search-btn").hide();
 
@@ -72,6 +73,7 @@ $("#search-btn").on("click", function() {
 				$("#img-box").show();
 				$("#result").show();
 				$("#map").show();
+				$("#time-to-dest").show();
 				$("#search-btn").show();
 				
 				console.log(response);
@@ -148,7 +150,7 @@ $("#search-btn").on("click", function() {
 		            	//append to div below maps
 		            	$("#time-to-dest").html("Time to destination " + "<strong>" + response1.rows[0].elements[0].duration.text + "</strong>");
 			        }); // ajax call to find time to reach destination ends
-	            }, 500);  
+	            }, 1000);  
 
 			}).fail(function(response){
 				alert("We are experiencing problems");
