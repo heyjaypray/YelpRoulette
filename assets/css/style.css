@@ -1,7 +1,5 @@
 body {
-	/* background: linear-gradient(to top, #ffe55d, #CAFAFE); */
-	background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0)), url(../images/sunset.jpeg);
-	/* background-image: url("../images/sunset.jpeg"); */
+	background-image: url("../images/sunset.jpeg"); 
 	background-position: center;
 	background-size: cover;
 	min-height: 100vh;
@@ -9,22 +7,22 @@ body {
 }
 
 h1 {
-	/*font-family: 'Rubik Mono One', sans-serif;
-	font-family: 'Poiret One', cursive;*/
 	font-family: 'Acme', sans-serif;
 	color: #fff;
 	font-size: 110px;
 	text-shadow: 3px 3px #ff5500;
 }
 
+p {
+	font-family: 'Acme', sans-serif;
+	font-size: 200%;
+	text-shadow: 1px 1px #000;
+}
+
 .container {
-	
-	opacity: 0.8;
 	max-width: 90%;
 	margin-top: 25px;
 	margin-bottom: 25px;
-	border-radius: 10px;
-	/*box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6), 0 15px 30px 0 rgba(0, 0, 0, 0.3); */
 	height: calc(100vh - 50px);
 }
 
@@ -65,8 +63,8 @@ h1 {
 .i-radius {	top: 5px; right: 40px; }
 
 .i-rating {	top: 5px; right: 40px; }
-/* ===================================================== */
 
+/* ===================================================== */
 #search-btn {
 	height: 175px;
 	cursor: pointer;
@@ -97,8 +95,13 @@ h1 {
 	box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.6), 0 30px 30px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* Layout ordering */
+#no-result {
+	min-height: 200px;
+	box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.6), 0 30px 30px 0 rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.2);
+}
 
+/* Layout ordering */
 #img-box { order: 1; }
 
 #map { order: 2;} 
@@ -109,7 +112,7 @@ h1 {
 
 .search { order: 5; }
 
-/* -------------------- MEDIA QUERUIES -------------------- */
+/* -------------------- MEDIA QUERIES -------------------- */
 @media screen and (max-width: 992px) {
 	#search-btn { height: 175px; }
 }
@@ -147,10 +150,8 @@ h1 {
 		max-width: 960px;
 	}
 }
-/* ========================================================== */
 
 /* -------------------- MAGIC ANIMATION -------------------- */
-
 .magictime.vanishIn {
 	-webkit-animation-duration: 2s;
 	-moz-animation-duration: 2s;
