@@ -46,7 +46,8 @@ h1 {
 	border: 1px solid #ff5500;
 }
 
-i {
+.i-keyword, .i-price,
+.i-radius, .i-rating {
 	color: #ff5500;
 	font-size: 130%;
 	position: absolute;
@@ -81,19 +82,19 @@ i {
 
 .img-result { 
 	height: 200px; 
-	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6), 0 15px 30px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.6), 0 30px 30px 0 rgba(0, 0, 0, 0.3);
 	border-radius: 5px;
 }
 
-#result {
+#result, #time-to-dest {
 	display:block;
-	color:#1aaddd;
+	color:#000;
 	font-size: 20px;
 }
 
 #map {
 	height: 200px;
-	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6), 0 15px 30px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.6), 0 30px 30px 0 rgba(0, 0, 0, 0.3);
 }
 
 /* Layout ordering */
@@ -137,6 +138,8 @@ i {
 	#search-btn { height: 175px; }
 
 	h1 { font-size: 60px; }
+
+	.img-result { max-width: 90%;  }
 }
 
 @media screen and (min-width: 992px) {
@@ -145,3 +148,26 @@ i {
 	}
 }
 /* ========================================================== */
+
+/* -------------------- MAGIC ANIMATION -------------------- */
+
+.magictime.vanishIn {
+	-webkit-animation-duration: 2s;
+	-moz-animation-duration: 2s;
+	-o-animation-duration: 2s;
+	animation-duration: 2s;
+}
+
+.magictime.tinDownIn, {
+	-webkit-animation-duration: 4s;
+	-moz-animation-duration: 4s;
+	-o-animation-duration: 4s;
+	animation-duration: 4s;
+}
+
+.magictime.foolishIn, .magictime.tinLeftIn {
+	-webkit-animation-duration: 3s;
+	-moz-animation-duration: 3s;
+	-o-animation-duration: 3s;
+	animation-duration: 3s;
+}

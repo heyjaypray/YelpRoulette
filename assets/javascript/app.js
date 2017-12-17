@@ -83,15 +83,16 @@ $("#search-btn").on("click", function() {
 				var address = response.businesses[index].location.display_address[0];
 				var city 	= response.businesses[index].location.display_address[1];
 				var image 	= response.businesses[index].image_url;
+				var phone	= response.businesses[index].display_phone;
 				lati 		= Number(response.businesses[index].coordinates.latitude);
 				long 		= Number(response.businesses[index].coordinates.longitude);
 
 				// rndIndex = response.businesses.length
 
 				console.log(result, lati,long);
-				$("#result").html(result + "<br>");
-				$("#result").append(address + "<br>");
-				$("#result").append(city);
+				$("#result").html("<i class=\"ion-android-restaurant\"></i> " + result + "<br>");
+				$("#result").append("<i class=\"ion-ios-location\"></i> " + address + city + "<br>");
+				$("#result").append("<i class=\"ion-android-call\"></i> " + phone);
 
 				var img = $("<img>");
 				img.addClass("img-result");
@@ -146,7 +147,7 @@ $("#search-btn").on("click", function() {
 					}).done(function(response1) {
 			        	console.log(response1.rows[0].elements[0].duration.text);
 		            	//append to div below maps
-		            	$("#time-to-dest").html("Time to destination " + "<strong>" + response1.rows[0].elements[0].duration.text + "</strong>");
+		            	$("#time-to-dest").html("Time to destination:<br>" + "<i class=\"ion-ios-timer\"></i> <strong>" + response1.rows[0].elements[0].duration.text + "</strong>");
 			        }); // ajax call to find time to reach destination ends
 	            }, 1000);  
 
