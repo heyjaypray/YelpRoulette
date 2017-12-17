@@ -111,14 +111,18 @@ $("#search-btn").on("click", function() {
 					// rndIndex = response.businesses.length
 
 					console.log(result, lati,long);
-					$("#result").html("<i class=\"ion-android-restaurant\"></i> " + result + "<br>");
-					$("#result").append("<i class=\"ion-ios-location\"></i> " + address + " " + city + "<br>");
-					$("#result").append("<i class=\"ion-android-call\"></i> " + phone);
+					$("#result").html("<i class=\"ion-android-restaurant text-success\"></i> " + result + "<br>");
+					$("#result").append("<i class=\"ion-ios-location text-success\"></i> " + address + " " + city + "<br>");
+					$("#result").append("<i class=\"ion-android-call text-success\"></i> " + phone);
 
-					var img = $("<img>");
-					img.addClass("img-result");
-					img.attr("src", image);
-					$("#img-box").html(img);
+					if (image === "") {
+						$("#img-box").html("<img src=\"assets/images/No_Image_Available.jpg\" class=\"img-result\">");
+					} else {
+						var img = $("<img>");
+						img.addClass("img-result");
+						img.attr("src", image);
+						$("#img-box").html(img);
+					}
 
 		            // Google map function declared  
 					function initMap() {
@@ -169,7 +173,7 @@ $("#search-btn").on("click", function() {
 							url: corsAnywhere + gurl,		
 						}).done(function(response1) {
 				        	console.log(response1.rows[0].elements[0].duration.text);
-			            	$("#time-to-dest").html("Time to destination:<br>" + "<i class=\"ion-ios-timer\"></i> <strong>" 
+			            	$("#time-to-dest").html("Time to destination:<br>" + "<i class=\"ion-ios-timer text-danger\"></i> <strong>" 
 			            		+ response1.rows[0].elements[0].duration.text + "</strong>");
 				        }); // End of ajax call to find time to reach destination
 		            }, 1000);  
