@@ -128,7 +128,7 @@ p {
 
 	#result { order: 2; }
 
-	#map { order: 3; width: 90%; }
+	#map { order: 3; }
 
 	#time-to-dest { order: 4; }
 
