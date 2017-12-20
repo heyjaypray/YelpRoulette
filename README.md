@@ -7,24 +7,24 @@ Distance
 Rating
 Price
 
-##**Motivation:**
+**Motivation:**
 To help with indecisive individuals decide where they will eat their next meal.
 And to save relationships.
 
-##**API's used**
+**API's used**
 Yelp API
 Google Maps API
 Google Geolocation API
 Google Calculate and Display Route API
 
-##**Libraries:**
+**Libraries:**
 Ionicon
 Magic Animation
 jQuery
 bootstrap
 Google Fonts
 
-##**Contributers:**
+**Contributers:**
 Justin Romanos
 Cuneyt Akcay
 Anindya Gupta
