@@ -50,7 +50,7 @@ $("#search-btn").on("click", function() {
 	keyword = $("#keyword").val().trim();
 	price 	= parseInt($("#price").val());
 	radius 	= parseInt($("#radius").val()) * 1600;
-	rating 	= Math.round($("#rating").val(),0);
+	rating 	= Math.round($("#rating").val(), 0);
 	
 	
 	// Call validateForm() function to make sure all fields are completed
@@ -68,7 +68,7 @@ $("#search-btn").on("click", function() {
 
 		// Api key and cors check declared for ajax call to yelp api  
 		const ywsid 		= "l-P4nQ-2wji4g-38vo_Eln9tkxP2DQrT7-c7yJ_Z4w047wrlRa1WIw86YQw1cRE3HtTwOLcyXBgN6ycXdsea-Bgx-QmZf4w79h44yht4cZyPCLCuy3A58uAiAP4pWnYx";
-		const corsAnywhere 	= "https://cors-anywhere.herokuapp.com/";
+		const corsAnywhere 	= "https://tri-cors-anywhere.herokuapp.com/";
         var loc, lati, long, origin_lat, origin_long, org;
 
 	    // Google geolocation api call function
@@ -76,12 +76,12 @@ $("#search-btn").on("click", function() {
 	        console.log(position);
 			origin_long 	= position.coords.longitude;
 			origin_lat 		= position.coords.latitude;	
-		    var yurl  		= "https://api.yelp.com/v3/businesses/search?term=" + keyword + "&location=" + position.coords.latitude + "," + position.coords.longitude + "&limit=20" + "&price=" + price + "&rating=" + rating;
+		    var yurl  		= "https://api.yelp.com/v3/businesses/search?term=" + keyword + "&location=" + position.coords.latitude + "," + position.coords.longitude + "&limit=20" + "&price=" + price;
 		    console.log(yurl);
 		
 			$.ajax({
 				method: "GET",
-				url: yurl,
+				url: corsAnywhere + yurl,
 				headers: {
 					"authorization": "Bearer " + ywsid
 				}	
@@ -138,7 +138,7 @@ $("#search-btn").on("click", function() {
 						var map = new google.maps.Map(document.getElementById('map'), {
 							zoom: 15,
 							center: uluru,
-							fullscreenControl: false, // disable fullscreen toggle button
+							//fullscreenControl: false, // disable fullscreen toggle button
 						});
 						
 			   			// Function that calls google api to superimpose directions on map called below
@@ -146,48 +146,48 @@ $("#search-btn").on("click", function() {
 			   			calculateAndDisplayRoute(directionsService, directionsDisplay); // Calls calculate and display route function
 
 			   			// A button to resize the map 
-			   			var resizeBtn = $("<button>");
-				   		resizeBtn.addClass("btn btn-warning btn-sm");
-				   		resizeBtn.html("Resize");
-				   		resizeBtn.css({position : "absolute", top : "10px", right: "10px", cursor: "pointer"});
-				   		$("#map").append(resizeBtn);
+			   			// var resizeBtn = $("<button>");
+				   		// resizeBtn.addClass("btn btn-warning btn-sm");
+				   		// resizeBtn.html("Resize");
+				   		// resizeBtn.css({position : "absolute", top : "10px", right: "10px", cursor: "pointer"});
+				   		// $("#map").append(resizeBtn);
 
 				   		// When the button on the map is clicked, the size of the map changes
-				   		var fullscreen = false;
+				   		// var fullscreen = false;
 				   		
-						resizeBtn.on("click", function() {
+						// resizeBtn.on("click", function() {
 							
-							var winWidth = $(window).width();
-					   		var winHeight = $(window).height();
-					   		var left = winWidth < 768 ? "0" : "25%"; 
+						// 	var winWidth = $(window).width();
+					   	// 	var winHeight = $(window).height();
+					   	// 	var left = winWidth < 768 ? "0" : "25%"; 
 
-							if (!fullscreen) {
-								$("#map").hide();
-								$("#logo").hide();
-								$("#img-box").hide();
-								$("#result").hide();
-								$("#time-to-dest").hide();
-								$(".search").hide(); 
-								$("#map").css({width : "100%", height : winHeight, position : "fixed", top : "0", left : left});
-								setTimeout(function(){
-									$("#map").show();
-								}, 100)
-								fullscreen = true;
-							} else {
-								$("#map").hide();
-								$("#logo").show();
-								$("#img-box").show();
-								$("#result").show();
-								$("#time-to-dest").show();
-								$(".search").show();
-								$("#map").css({height : "200px", position : "relative", top : "0", left : "0"});
-								setTimeout(function(){
-									$("#map").show();
-								}, 100)
-								fullscreen = false;
-							}
+						// 	if (!fullscreen) {
+						// 		$("#map").hide();
+						// 		$("#logo").hide();
+						// 		$("#img-box").hide();
+						// 		$("#result").hide();
+						// 		$("#time-to-dest").hide();
+						// 		$(".search").hide(); 
+						// 		$("#map").css({width : "100%", height : winHeight, position : "fixed", top : "0", left : left});
+						// 		setTimeout(function(){
+						// 			$("#map").show();
+						// 		}, 100)
+						// 		fullscreen = true;
+						// 	} else {
+						// 		$("#map").hide();
+						// 		$("#logo").show();
+						// 		$("#img-box").show();
+						// 		$("#result").show();
+						// 		$("#time-to-dest").show();
+						// 		$(".search").show();
+						// 		$("#map").css({height : "200px", position : "relative", top : "0", left : "0"});
+						// 		setTimeout(function(){
+						// 			$("#map").show();
+						// 		}, 100)
+						// 		fullscreen = false;
+						// 	}
 							
-						});
+						// });
 			   		}
 
 		     		// Google map function for rendering directions declared
