@@ -168,7 +168,7 @@ $("#search-btn").on("click", function() {
 					initMap(); 
 				
 		          	// Adding time to reach destination as a timeout function
-			        setTimeout(function() { 
+			        
 				        // New ajax call to googlemap api  to get time to destination
 				        var gurl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial" + "&origins=" + origin_lat + "," + origin_long + "&destinations=" + lati + "," + long + "&key=" + "AIzaSyBOrrP3F9BuMmSkdtiCkVdvjNFtbYQCZAE";
 				        
@@ -180,7 +180,7 @@ $("#search-btn").on("click", function() {
 			            	$("#time-to-dest").html("Time to destination:<br>" + "<i class=\"ion-ios-timer text-danger\"></i> <strong>" 
 			            		+ response1.rows[0].elements[0].duration.text + "</strong>");
 				        }); // End of ajax call to find time to reach destination
-		            }, 1000); 
+		            
 		        // This will be displayed if response has no results to display 
 				} else { 
 					console.log("No result!"); 
@@ -204,6 +204,12 @@ $("#search-btn").on("click", function() {
 $("#back").on("click", function() {
 	location.reload(false);
 });
+
+
+$("#logo").on("click", function() {
+	location.reload(false);
+});
+
 
 
 
