@@ -138,56 +138,14 @@ $("#search-btn").on("click", function() {
 						var map = new google.maps.Map(document.getElementById('map'), {
 							zoom: 15,
 							center: uluru,
-							//fullscreenControl: false, // disable fullscreen toggle button
+							scaleControl: true,
+							fullscreenControl: false
 						});
+						
 						
 			   			// Function that calls google api to superimpose directions on map called below
 		 				directionsDisplay.setMap(map);
-			   			calculateAndDisplayRoute(directionsService, directionsDisplay); // Calls calculate and display route function
-
-			   			// A button to resize the map 
-			   			// var resizeBtn = $("<button>");
-				   		// resizeBtn.addClass("btn btn-warning btn-sm");
-				   		// resizeBtn.html("Resize");
-				   		// resizeBtn.css({position : "absolute", top : "10px", right: "10px", cursor: "pointer"});
-				   		// $("#map").append(resizeBtn);
-
-				   		// When the button on the map is clicked, the size of the map changes
-				   		// var fullscreen = false;
-				   		
-						// resizeBtn.on("click", function() {
-							
-						// 	var winWidth = $(window).width();
-					   	// 	var winHeight = $(window).height();
-					   	// 	var left = winWidth < 768 ? "0" : "25%"; 
-
-						// 	if (!fullscreen) {
-						// 		$("#map").hide();
-						// 		$("#logo").hide();
-						// 		$("#img-box").hide();
-						// 		$("#result").hide();
-						// 		$("#time-to-dest").hide();
-						// 		$(".search").hide(); 
-						// 		$("#map").css({width : "100%", height : winHeight, position : "fixed", top : "0", left : left});
-						// 		setTimeout(function(){
-						// 			$("#map").show();
-						// 		}, 100)
-						// 		fullscreen = true;
-						// 	} else {
-						// 		$("#map").hide();
-						// 		$("#logo").show();
-						// 		$("#img-box").show();
-						// 		$("#result").show();
-						// 		$("#time-to-dest").show();
-						// 		$(".search").show();
-						// 		$("#map").css({height : "200px", position : "relative", top : "0", left : "0"});
-						// 		setTimeout(function(){
-						// 			$("#map").show();
-						// 		}, 100)
-						// 		fullscreen = false;
-						// 	}
-							
-						// });
+						   calculateAndDisplayRoute(directionsService, directionsDisplay); // Calls calculate and display route function
 			   		}
 
 		     		// Google map function for rendering directions declared
@@ -210,7 +168,7 @@ $("#search-btn").on("click", function() {
 					initMap(); 
 				
 		          	// Adding time to reach destination as a timeout function
-			        setTimeout(function() { 
+			        
 				        // New ajax call to googlemap api  to get time to destination
 				        var gurl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial" + "&origins=" + origin_lat + "," + origin_long + "&destinations=" + lati + "," + long + "&key=" + "AIzaSyBOrrP3F9BuMmSkdtiCkVdvjNFtbYQCZAE";
 				        
@@ -222,7 +180,7 @@ $("#search-btn").on("click", function() {
 			            	$("#time-to-dest").html("Time to destination:<br>" + "<i class=\"ion-ios-timer text-danger\"></i> <strong>" 
 			            		+ response1.rows[0].elements[0].duration.text + "</strong>");
 				        }); // End of ajax call to find time to reach destination
-		            }, 1000); 
+		            
 		        // This will be displayed if response has no results to display 
 				} else { 
 					console.log("No result!"); 
@@ -246,6 +204,12 @@ $("#search-btn").on("click", function() {
 $("#back").on("click", function() {
 	location.reload(false);
 });
+
+
+$("#logo").on("click", function() {
+	location.reload(false);
+});
+
 
 
 
