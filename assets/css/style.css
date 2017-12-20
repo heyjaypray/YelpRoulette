@@ -93,6 +93,7 @@ p {
 #map {
 	height: 200px;
 	box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.6), 0 30px 30px 0 rgba(0, 0, 0, 0.3);
+	z-index: 1000;
 }
 
 #no-result {
