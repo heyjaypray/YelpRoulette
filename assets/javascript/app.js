@@ -75,7 +75,7 @@ $("#search-btn").on("click", function() {
 	        console.log(position);
 			origin_long 	= position.coords.longitude;
 			origin_lat 		= position.coords.latitude;	
-		    var yurl  		= "https://api.yelp.com/v3/businesses/search?term=" + keyword + "&location=" + position.coords.latitude + "," + position.coords.longitude + "&limit=50";
+		    var yurl  		= "https://api.yelp.com/v3/businesses/search?term=" + keyword + "&location=" + position.coords.latitude + "," + position.coords.longitude + "&limit=20";
 		    console.log(yurl);
 		
 			$.ajax({
