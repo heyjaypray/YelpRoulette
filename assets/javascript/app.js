@@ -50,7 +50,7 @@ $("#search-btn").on("click", function() {
 	keyword = $("#keyword").val().trim();
 	price 	= parseInt($("#price").val());
 	radius 	= parseInt($("#radius").val()) * 1600;
-	rating 	= Math.round($("#rating").val();
+	rating 	= Math.round($("#rating").val(),0);
 	
 	
 	// Call validateForm() function to make sure all fields are completed
