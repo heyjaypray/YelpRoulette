@@ -25,7 +25,7 @@ function validateForm() {
 		$(".i-radius").show(); 
 	}
 
-	if (rating === "") { 
+	if (rating === 0) { 
 		formIsValid = false; 
 		$("#rating").addClass("focus"); 
 		$(".i-rating").show(); 
